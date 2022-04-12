@@ -1,6 +1,6 @@
 @mixin layout {
   display: flex;
-  width: 120rem;
+  max-width: 120rem;
   margin: 5rem auto;
   align-items: flex-start;
 }
@@ -52,7 +52,7 @@
     justify-content: space-evenly;
 
     &__food {
-      width: 26%;
+      width: 30.1rem;
       margin-bottom: 5rem;
 
       &--img {
