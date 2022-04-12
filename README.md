@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Leaderboard
+# Favorite Meals
 
 > In this project, we intended to develop a dynamic website, which is a basic single page apps. and throughout this project we did follow the following requirements:
 
