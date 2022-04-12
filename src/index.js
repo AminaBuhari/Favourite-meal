@@ -1,5 +1,6 @@
 /* eslint-disable import/extensions */
 import './main.scss';
-import displayLogo from './modules/paint';
+import { displayFood, displayLogo } from './modules/paint';
 
 displayLogo();
+displayFood();
