@@ -1,10 +1,11 @@
 /* eslint-disable import/extensions */
 import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
-import numberOfLikes from './controller';
+import { numberOfLikes, like, countFavoirte } from './controller';
 
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
+const itemCounter = document.querySelector('.item-counter');
 
 // /////////////////// Create dom elements
 const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
@@ -21,9 +22,15 @@ const displayLogo = () => {
   logoContainer.appendChild(logoImg);
 };
 
+const displayCount = async () => {
+  const data = await getData();
+  itemCounter.textContent = countFavoirte(data);
+};
+
 const displayFood = async () => {
-  const data = await getData().then((res) => res.categories);
+  const data = await getData();
   data.forEach(async (e) => {
+    const noLikes = await numberOfLikes(e.idCategory);
     const foodCont = createElement('div', ['main__food']);
     const foodImg = createElement('img', ['main__food--img'], '', e.strCategoryThumb, 'Favorite Food');
     const foodDesc = createElement('div', ['main__food--desc']);
@@ -33,7 +40,7 @@ const displayFood = async () => {
     const likes = createElement('div', ['likes']);
     const icon = createElement('i', ['icon', 'fa', 'fa-thin', 'fa-heart']);
     const likesPara = createElement('p');
-    const numLikes = createElement('span', ['num-likes'], await numberOfLikes(e.idCategory));
+    const numLikes = createElement('span', ['num-likes'], noLikes);
     const spanLikes = createElement('span', [], ' likes');
     const commButton = createElement('button', ['main__food--btn'], 'Comments');
 
@@ -44,7 +51,9 @@ const displayFood = async () => {
     foodDesc.append(descCard, commButton);
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
+
+    like(icon, e.idCategory, numLikes);
   });
 };
 
-export { displayLogo, displayFood };
+export { displayLogo, displayCount, displayFood };
