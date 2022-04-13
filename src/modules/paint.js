@@ -1,6 +1,7 @@
 /* eslint-disable import/extensions */
 import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
+import numberOfLikes from './controller';
 
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
@@ -22,7 +23,7 @@ const displayLogo = () => {
 
 const displayFood = async () => {
   const data = await getData().then((res) => res.categories);
-  data.forEach((e) => {
+  data.forEach(async (e) => {
     const foodCont = createElement('div', ['main__food']);
     const foodImg = createElement('img', ['main__food--img'], '', e.strCategoryThumb, 'Favorite Food');
     const foodDesc = createElement('div', ['main__food--desc']);
@@ -32,7 +33,7 @@ const displayFood = async () => {
     const likes = createElement('div', ['likes']);
     const icon = createElement('i', ['icon', 'fa', 'fa-thin', 'fa-heart']);
     const likesPara = createElement('p');
-    const numLikes = createElement('span', ['num-likes'], '10');
+    const numLikes = createElement('span', ['num-likes'], await numberOfLikes(e.idCategory));
     const spanLikes = createElement('span', [], ' likes');
     const commButton = createElement('button', ['main__food--btn'], 'Comments');
 

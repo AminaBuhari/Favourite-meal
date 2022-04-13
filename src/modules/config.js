@@ -1,17 +1,11 @@
 // ////////////// Api request
-const appID = 'AminaTeshomeID';
+const appID = 'pRq1suu6RjKsbgQfyKxp';
 const baseURL = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const involvementURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/`;
 
-// ////////////// Create food object
-const food = {
-  id: '',
-  name: '',
-  description: '',
-  images: '',
-  likes: 0,
-  comments: [],
-};
+// ////////////// Create objects
+const likes = { item_id: '' };
+const comments = { item_id: '', username: '', comment: '' };
 
 // ////////////// Get all data from baseURL
 const getData = async () => {
@@ -25,20 +19,10 @@ const getLikes = async () => {
   return response.json();
 };
 
-// ////////////// Get Single data from involvementURL
+// ////////////// Get Comments
 const getComments = async (id) => {
   const response = await fetch(`${involvementURL}comments?item_id=${id}`);
   return response.json();
-};
-
-// /////////////////// Post Data
-const postData = async (data = {}) => {
-  await fetch(involvementURL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  });
-  return appID;
 };
 
 // /////////////////// Post Likes
@@ -48,9 +32,25 @@ const postLikes = async (data = {}) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   });
-  return response.json();
+  return response.status();
+};
+
+// /////////////////// Post Comments
+const postComments = async (data = {}) => {
+  const response = await fetch(`${involvementURL}comments`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  return response.status();
 };
 
 export {
-  food, getData, getLikes, getComments, postData, postLikes,
+  getData,
+  getLikes,
+  getComments,
+  postLikes,
+  postComments,
+  likes,
+  comments,
 };
