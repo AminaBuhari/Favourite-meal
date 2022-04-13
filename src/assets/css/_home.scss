@@ -1,3 +1,114 @@
+@mixin layout {
+  display: flex;
+  max-width: 120rem;
+  margin: 5rem auto;
+  align-items: flex-start;
+}
+
 .container {
-  color: red;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .header {
+    flex: 1;
+
+    @include layout();
+
+    .logo-img {
+      margin-right: 5rem;
+      width: 10rem;
+      height: 10rem;
+      border: 1px solid var(--black);
+      border-radius: 50%;
+    }
+
+    .nav {
+      &__items {
+        display: flex;
+
+        &--item {
+          margin-top: 2.5rem;
+          list-style: none;
+
+          &:not(:last-child) {
+            margin-right: 3rem;
+          }
+
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    @include layout();
+
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    &__food {
+      width: 30.1rem;
+      margin-bottom: 5rem;
+
+      &--img {
+        width: 100%;
+        transform: translateY(0.7rem);
+      }
+
+      &--desc {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .card {
+          display: flex;
+          justify-content: space-around;
+          padding: 2rem 0;
+          background-color: var(--light-grey);
+
+          .likes {
+            .icon {
+              cursor: pointer;
+              font-size: 2rem;
+              color: var(--light-purple);
+            }
+          }
+        }
+      }
+
+      &--btn {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: 600;
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        background-color: var(--light-grey-2);
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: var(--grey);
+          color: var(--white);
+          transform: translateY(2px);
+        }
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 5rem;
+    background-color: var(--grey);
+    color: var(--white);
+    flex: 0.5;
+
+    .copy-right {
+      margin: 3rem 2rem;
+    }
+  }
 }
