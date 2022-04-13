@@ -41,11 +41,12 @@
         }
 
         .item-counter {
-          padding: 0.5rem 0.7rem;
+          padding: .5rem .7rem;
           background-color: var(--light-purple);
           color: var(--white);
           font-weight: 600;
-          border-radius: 50%;
+          ;
+          border-radius: 50%
         }
       }
     }
@@ -82,8 +83,25 @@
           .likes {
             .icon {
               cursor: pointer;
-              font-size: 2rem;
-              color: var(--light-purple);
+              width: 2.4rem;
+              height: 2.4rem;
+              background-color: var(--light-purple);
+              clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+              position: relative;
+              transform: scale(1.2);
+              transition: all .2s;
+
+              &:hover {
+                transform: translateY(-3px);
+                transform: scale(1.4);
+
+                &:active,
+                &:focus {
+                  outline: none;
+                  transform: translateY(-1px);
+                  background-color: var(--light-purple-2);
+                }
+              }
             }
           }
         }

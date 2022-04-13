@@ -38,7 +38,7 @@ const displayFood = async () => {
     const descCard = createElement('div', ['card']);
     const descPara = createElement('p', [], e.strCategory);
     const likes = createElement('div', ['likes']);
-    const icon = createElement('i', ['icon', 'fa', 'fa-thin', 'fa-heart']);
+    const icon = createElement('div', ['icon']);
     const likesPara = createElement('p');
     const numLikes = createElement('span', ['num-likes'], noLikes);
     const spanLikes = createElement('span', [], ' likes');
