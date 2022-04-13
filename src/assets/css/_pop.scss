@@ -1,0 +1,74 @@
+.pop-img {
+  width: 40%;
+  margin-top: 10px;
+}
+.comment-popup {
+  margin: 20px;
+  border: 3px solid black;
+
+
+}
+
+h2{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.about{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 20px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+
+.des{
+  display: flex;
+  flex-direction: column;
+}
+.container-img {
+  display: flex;
+  justify-content: center;
+}
+
+h5{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.date {
+  padding-left: 60px;
+  font-size: 1.2rem;
+  padding-top: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  padding-left: 60px;
+  
+}
+
+#name{
+  width: 60%;
+  border: 2px solid black;
+  margin-top: 15px;
+
+}
+
+textarea {
+  border: 2px solid black;
+}
+
+button {
+  width: 70%;
+  border: 2px solid black;
+  background-color: transparent;
+  box-shadow: 2px 3px;
+  margin-bottom: 20px;
+}
