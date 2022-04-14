@@ -3,9 +3,13 @@ import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
 import { numberOfLikes, like } from './controller';
 
+
+const container = document.querySelector('.container');
+const popWindow = document.querySelector('.popup-window');
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
 const itemCounter = document.querySelector('.item-counter');
+
 
 // /////////////////// Create dom elements
 const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
@@ -25,6 +29,17 @@ const displayLogo = () => {
 const displayCount = (count) => {
   itemCounter.textContent = count;
 };
+
+// /////////////////// Display Comment
+const displayComment = (btn) => {
+  btn.addEventListener('click', () => {
+    container.classList.add('hide');
+    popWindow.classList.remove('hide')
+    popWindow.classList.add('show');
+  });
+};
+
+
 
 const displayFood = async () => {
   let count = 0;
@@ -52,7 +67,9 @@ const displayFood = async () => {
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
     count += 1;
+    
     displayCount(count);
+    displayComment(commButton);
 
     like(icon, e.idCategory, numLikes);
   });
