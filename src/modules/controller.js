@@ -15,12 +15,4 @@ const like = (icon, id, numLikes) => {
   });
 };
 
-const countFavoirte = (data) => {
-  let count = 0;
-  data.forEach(() => {
-    count += 1;
-  });
-  return count;
-};
-
-export { numberOfLikes, like, countFavoirte };
+export { numberOfLikes, like };

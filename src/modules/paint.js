@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
-import { numberOfLikes, like, countFavoirte } from './controller';
+import { numberOfLikes, like } from './controller';
 
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
@@ -22,12 +22,12 @@ const displayLogo = () => {
   logoContainer.appendChild(logoImg);
 };
 
-const displayCount = async () => {
-  const data = await getData();
-  itemCounter.textContent = countFavoirte(data);
+const displayCount = (count) => {
+  itemCounter.textContent = count;
 };
 
 const displayFood = async () => {
+  let count = 0;
   const data = await getData();
   data.forEach(async (e) => {
     const noLikes = await numberOfLikes(e.idCategory);
@@ -51,6 +51,8 @@ const displayFood = async () => {
     foodDesc.append(descCard, commButton);
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
+    count += 1;
+    displayCount(count);
 
     like(icon, e.idCategory, numLikes);
   });
