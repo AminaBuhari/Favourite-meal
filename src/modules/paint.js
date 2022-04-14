@@ -1,11 +1,9 @@
 /* eslint-disable import/extensions */
 import logo from '../assets/images/fast-food.jpg';
-import { getData } from './config';
+import { getComments, getData } from './config';
 import { numberOfLikes, like } from './controller';
+import { displayComment, displayPopup } from './picture';
 
-
-const container = document.querySelector('.container');
-const popWindow = document.querySelector('.popup-window');
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
 const itemCounter = document.querySelector('.item-counter');
@@ -28,15 +26,6 @@ const displayLogo = () => {
 
 const displayCount = (count) => {
   itemCounter.textContent = count;
-};
-
-// /////////////////// Display Comment
-const displayComment = (btn) => {
-  btn.addEventListener('click', () => {
-    container.classList.add('hide');
-    popWindow.classList.remove('hide')
-    popWindow.classList.add('show');
-  });
 };
 
 
@@ -68,8 +57,9 @@ const displayFood = async () => {
     mainContainer.appendChild(foodCont);
     count += 1;
     
+    displayPopup(e.idCategory, e.strCategoryThumb, e.strCategory)
     displayCount(count);
-    displayComment(commButton);
+    displayComment(commButton, e.idCategory, e.strCategoryThumb, e.strCategory);
 
     like(icon, e.idCategory, numLikes);
   });

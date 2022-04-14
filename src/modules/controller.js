@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import { getLikes, likeOB, postLikes } from './config';
+import { getLikes, likeOB, postLikes, getComments } from './config';
 
 const numberOfLikes = async (id) => {
   const likes = await getLikes();
@@ -15,4 +15,10 @@ const like = (icon, id, numLikes) => {
   });
 };
 
-export { numberOfLikes, like };
+const displayComments = async (id) => {
+  const comments = await getComments(id);
+  const comment = comments.find((e) => e.item_id === id);
+  return comment || [];
+};
+
+export { numberOfLikes, like, displayComments };

@@ -42,7 +42,7 @@ const postComments = async (data = {}) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   });
-  return response.status();
+  return response;
 };
 
 export {
