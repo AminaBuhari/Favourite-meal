@@ -1,10 +1,11 @@
 /* eslint-disable import/extensions */
 import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
-import numberOfLikes from './controller';
+import { numberOfLikes, like } from './controller';
 
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
+const itemCounter = document.querySelector('.item-counter');
 
 // /////////////////// Create dom elements
 const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
@@ -21,9 +22,15 @@ const displayLogo = () => {
   logoContainer.appendChild(logoImg);
 };
 
+const displayCount = (count) => {
+  itemCounter.textContent = count;
+};
+
 const displayFood = async () => {
-  const data = await getData().then((res) => res.categories);
+  let count = 0;
+  const data = await getData();
   data.forEach(async (e) => {
+    const noLikes = await numberOfLikes(e.idCategory);
     const foodCont = createElement('div', ['main__food']);
     const foodImg = createElement('img', ['main__food--img'], '', e.strCategoryThumb, 'Favorite Food');
     const foodDesc = createElement('div', ['main__food--desc']);
@@ -31,9 +38,9 @@ const displayFood = async () => {
     const descCard = createElement('div', ['card']);
     const descPara = createElement('p', [], e.strCategory);
     const likes = createElement('div', ['likes']);
-    const icon = createElement('i', ['icon', 'fa', 'fa-thin', 'fa-heart']);
+    const icon = createElement('div', ['icon']);
     const likesPara = createElement('p');
-    const numLikes = createElement('span', ['num-likes'], await numberOfLikes(e.idCategory));
+    const numLikes = createElement('span', ['num-likes'], noLikes);
     const spanLikes = createElement('span', [], ' likes');
     const commButton = createElement('button', ['main__food--btn'], 'Comments');
 
@@ -44,7 +51,11 @@ const displayFood = async () => {
     foodDesc.append(descCard, commButton);
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
+    count += 1;
+    displayCount(count);
+
+    like(icon, e.idCategory, numLikes);
   });
 };
 
-export { displayLogo, displayFood };
+export { displayLogo, displayCount, displayFood };

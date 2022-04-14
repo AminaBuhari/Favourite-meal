@@ -4,13 +4,13 @@ const baseURL = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const involvementURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/`;
 
 // ////////////// Create objects
-const likes = { item_id: '' };
+const likeOB = { item_id: '' };
 const comments = { item_id: '', username: '', comment: '' };
 
 // ////////////// Get all data from baseURL
 const getData = async () => {
   const response = await fetch(baseURL);
-  return response.json();
+  return response.json().then((res) => res.categories);
 };
 
 // ////////////// Get all data from involvementURL
@@ -51,6 +51,6 @@ export {
   getComments,
   postLikes,
   postComments,
-  likes,
+  likeOB,
   comments,
 };
