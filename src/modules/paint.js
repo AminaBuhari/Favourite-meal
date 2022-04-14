@@ -1,5 +1,4 @@
 /* eslint-disable import/extensions */
-import { indexOf } from 'lodash';
 import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
 import { numberOfLikes, like } from './controller';
