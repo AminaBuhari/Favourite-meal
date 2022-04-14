@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/030a66e167.js" crossorigin="anonymous"></script>
   <title>Favorite Meal</title>
 </head>
+
 <body>
   <div class="container">
     <header class="header">
@@ -24,6 +26,24 @@
       <p class="copy-right">Created by Microverse under CC License</p>
     </footer>
   </div>
-  <div class="comment-popup"></div>
+
+  <!-- Popup Window -->
+  <div class="popup-window">
+    <div class="wrapper">
+      <header class="pop-header">
+        <a href="#" class="icon-close"><i class="fa fa-solid fa-xmark"></i></a>
+      </header>
+      <div class="pop-main"></div>
+      <footer class="pop-footer">
+        <h2>Add a comment</h2>
+        <form>
+          <input type="text" name="name" id="name" placeholder="Your name" />
+          <textarea name="textarea" placeholder="Your insights" id="textarea" cols="30" rows="5"></textarea>
+          <button type="button" class="btnComment">Comment</button>
+        </form>
+      </footer>
+    </div>
+  </div>
 </body>
+
 </html>
