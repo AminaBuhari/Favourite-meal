@@ -1,8 +1,11 @@
 /* eslint-disable import/extensions */
+import { indexOf } from 'lodash';
 import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
 import { numberOfLikes, like } from './controller';
 
+const container = document.querySelector('.container');
+const popWindow = document.querySelector('.popup-window');
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
 const itemCounter = document.querySelector('.item-counter');
@@ -17,13 +20,23 @@ const createElement = (element = '', className = [], text = '', src = '', alt = 
   return newElement;
 };
 
+// /////////////////// Display Logo
 const displayLogo = () => {
   const logoImg = createElement('img', ['logo-img'], '', logo, 'LOGO');
   logoContainer.appendChild(logoImg);
 };
 
+// /////////////////// Display number of favorite food
 const displayCount = (count) => {
   itemCounter.textContent = count;
+};
+
+// /////////////////// Display Comment
+const displayComment = async (btn) => {
+  await btn.addEventListener('click', () => {
+    container.classList.add('hide');
+    popWindow.classList.add('show');
+  });
 };
 
 const displayFood = async () => {
@@ -52,8 +65,9 @@ const displayFood = async () => {
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
     count += 1;
-    displayCount(count);
 
+    displayCount(count);
+    displayComment(commButton);
     like(icon, e.idCategory, numLikes);
   });
 };
