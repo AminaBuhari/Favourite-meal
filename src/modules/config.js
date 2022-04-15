@@ -1,5 +1,7 @@
+
+
 // ////////////// Api request
-const appID = 'pRq1suu6RjKsbgQfyKxp';
+const appID = 'NFxX76uVcS9wzX0LJoyT';
 const baseURL = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const involvementURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appID}/`;
 
@@ -22,7 +24,15 @@ const getLikes = async () => {
 // ////////////// Get Comments
 const getComments = async (id) => {
   const response = await fetch(`${involvementURL}comments?item_id=${id}`);
-  return response.json();
+  if (response.status === 200) return response.json();
+
+  return [
+    {
+      comment: 'No Comment here please Add',
+      creation_date: '',
+      username: '',
+    },
+  ];
 };
 
 // /////////////////// Post Likes
@@ -53,4 +63,5 @@ export {
   postComments,
   likeOB,
   comments,
+  baseURL,
 };

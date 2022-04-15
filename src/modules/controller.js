@@ -1,5 +1,7 @@
 /* eslint-disable import/extensions */
-import { getLikes, likeOB, postLikes, getComments } from './config';
+import {
+  getLikes, likeOB, postLikes, getComments,
+} from './config';
 
 const numberOfLikes = async (id) => {
   const likes = await getLikes();
