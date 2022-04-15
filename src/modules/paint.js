@@ -1,16 +1,21 @@
 /* eslint-disable import/extensions */
-import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
 import { numberOfLikes, like } from './controller';
+import displayPopup from './picture';
 
-const container = document.querySelector('.container');
-const popWindow = document.querySelector('.popup-window');
+const logo = 'https://static.photocrowd.com/upl/DF/cms.kqBA86TWO9ELumnHrQTg-v2b.jpeg';
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
 const itemCounter = document.querySelector('.item-counter');
 
 // /////////////////// Create dom elements
-const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
+const createElement = (
+  element = '',
+  className = [],
+  text = '',
+  src = '',
+  alt = '',
+) => {
   const newElement = document.createElement(element);
   newElement.classList.add(...className);
   newElement.textContent = text;
@@ -30,21 +35,19 @@ const displayCount = (count) => {
   itemCounter.textContent = count;
 };
 
-// /////////////////// Display Comment
-const displayComment = async (btn) => {
-  await btn.addEventListener('click', () => {
-    container.classList.add('hide');
-    popWindow.classList.add('show');
-  });
-};
-
 const displayFood = async () => {
   let count = 0;
   const data = await getData();
   data.forEach(async (e) => {
     const noLikes = await numberOfLikes(e.idCategory);
     const foodCont = createElement('div', ['main__food']);
-    const foodImg = createElement('img', ['main__food--img'], '', e.strCategoryThumb, 'Favorite Food');
+    const foodImg = createElement(
+      'img',
+      ['main__food--img'],
+      '',
+      e.strCategoryThumb,
+      'Favorite Food',
+    );
     const foodDesc = createElement('div', ['main__food--desc']);
     const desc = createElement('div', ['desc']);
     const descCard = createElement('div', ['card']);
@@ -65,8 +68,9 @@ const displayFood = async () => {
     mainContainer.appendChild(foodCont);
     count += 1;
 
+    displayPopup(commButton, e);
+
     displayCount(count);
-    displayComment(commButton);
     like(icon, e.idCategory, numLikes);
   });
 };
