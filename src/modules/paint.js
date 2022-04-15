@@ -52,13 +52,6 @@ const displayFood = async () => {
     foodDesc.append(descCard, commButton);
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
-    count += 1;
-
-    displayPopup(commButton, e);
-    displayCount(count);
-
-    like(icon, e.idCategory, numLikes);
-  });
 };
 
 export { displayLogo, displayCount, displayFood };

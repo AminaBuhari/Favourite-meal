@@ -64,7 +64,7 @@ const displayPopup = async (btn, e) => {
     const aboutCont = createElement('div', ['about']);
     const desc1 = createElement('div', ['desc1']);
     const desc2 = createElement('div', ['desc2']);
-    const p1 = createElement('p', '', 'Food: pancake');
+    const p1 = createElement('p', '', `Food: ${e.strCategory}`);
     const p2 = createElement('p', '', 'Origin: America');
     const p3 = createElement('p', '', 'Calories: 200kcal');
     const p4 = createElement('p', '', 'Toppings: Chocolate syrup');

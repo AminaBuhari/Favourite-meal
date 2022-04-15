@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/030a66e167.js" crossorigin="anonymous"></script>
   <title>Favorite Meal</title>
-<link rel="icon" href="fast-food.jpg"><script defer src="main.bundle.js"></script></head>
-
+<link rel="icon" href="favicon.jpeg"><script defer src="main.bundle.js"></script></head>
 <body>
   <div class="container">
     <header class="header">
       <div class="logo"></div>
       <nav class="nav">
         <ul class="nav__items">
-          <li class="nav__items--item"><a href="">Favorite Foods <span class="item-counter"></span></a></li>
+          <li class="nav__items--item"><a href="">Favorite Foods <span class="item-counter">0</span></a></li>
           <li class="nav__items--item"><a href="">Ordered</a></li>
           <li class="nav__items--item"><a href="">Top Customers</a></li>
         </ul>
@@ -23,23 +21,23 @@
     </header>
     <main class="main"></main>
     <footer class="footer">
-      <p class="copy-right">Created by Microverse under CC License</p>
+      <p class="copy-right">Created by Teshome and Amina under Microverse CC License</p>
     </footer>
   </div>
-
   <!-- Popup Window -->
   <div class="popup-window">
     <div class="wrapper">
       <header class="pop-header">
+        <div class="img-cont"></div>
         <a href="#" class="icon-close"><i class="fa fa-solid fa-xmark"></i></a>
       </header>
       <div class="pop-main"></div>
       <footer class="pop-footer">
         <h2>Add a comment</h2>
-        <form>
-          <input type="text" name="name" id="name" placeholder="Your name" />
-          <textarea name="textarea" placeholder="Your insights" id="textarea" cols="30" rows="5"></textarea>
-          <button type="button" class="btnComment">Comment</button>
+        <form id="form" >
+          <input type="text" name="name" id="name" placeholder="Your name" required/>
+          <textarea name="textarea" placeholder="Your insights" id="textarea" cols="30" rows="5" required></textarea>
+          <button type="submit" class="btnComment">Comment</button>
         </form>
       </footer>
     </div>
@@ -47,3 +45,4 @@
 </body>
 
 </html>
+
