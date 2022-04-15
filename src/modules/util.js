@@ -1,29 +1,11 @@
 /* eslint-disable import/extensions */
-import logo from '../assets/images/fast-food.jpg';
 import { getData } from './config';
 import { numberOfLikes, like } from './controller';
 
 const container = document.querySelector('.container');
 const popWindow = document.querySelector('.popup-window');
-const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
 const itemCounter = document.querySelector('.item-counter');
-
-// /////////////////// Create dom elements
-const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
-  const newElement = document.createElement(element);
-  newElement.classList.add(...className);
-  newElement.textContent = text;
-  newElement.src = src;
-  newElement.alt = alt;
-  return newElement;
-};
-
-// /////////////////// Display Logo
-const displayLogo = () => {
-  const logoImg = createElement('img', ['logo-img'], '', logo, 'LOGO');
-  logoContainer.appendChild(logoImg);
-};
 
 // /////////////////// Display number of favorite food
 const displayCount = (count) => {
@@ -36,6 +18,15 @@ const displayComment = async (btn) => {
     container.classList.add('hide');
     popWindow.classList.add('show');
   });
+};
+
+const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
+  const newElement = document.createElement(element);
+  newElement.classList.add(...className);
+  newElement.textContent = text;
+  newElement.src = src;
+  newElement.alt = alt;
+  return newElement;
 };
 
 const displayFood = async () => {
@@ -71,4 +62,4 @@ const displayFood = async () => {
   });
 };
 
-export { displayLogo, displayCount, displayFood };
+module.exports = { displayCount, displayFood };
