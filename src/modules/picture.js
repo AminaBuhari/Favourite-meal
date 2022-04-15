@@ -24,6 +24,8 @@ const closePopup = (btn) => {
   });
 };
 
+const countComment = (data) => data.length;
+
 const addComment = (e, foodname, aboutCont, comment, commentGroup, numComments) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -58,6 +60,7 @@ const displayPopup = async (btn, e) => {
     imgCont.innerHTML = '';
     const img = createElement('img', ['pop-img'], '', e.strCategoryThumb, 'Picture');
     const data = await getComments(e.idCategory);
+    const numberOfComments = countComment(data);
     const commentGroup = createElement('div', ['comment-group']);
     const foodname = createElement('h2', ['food-name'], e.strCategory);
     const comment = createElement('h2', ['comment'], 'Comments ');
@@ -68,7 +71,7 @@ const displayPopup = async (btn, e) => {
     const p2 = createElement('p', '', 'Origin: America');
     const p3 = createElement('p', '', 'Calories: 200kcal');
     const p4 = createElement('p', '', 'Toppings: Chocolate syrup');
-    const numComments = createElement('span', ['comment-counter'], data.length);
+    const numComments = createElement('span', ['comment-counter'], numberOfComments);
 
     imgCont.appendChild(img);
     desc1.append(p1, p2);
