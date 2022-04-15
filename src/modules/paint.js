@@ -9,7 +9,13 @@ const mainContainer = document.querySelector('.main');
 const itemCounter = document.querySelector('.item-counter');
 
 // /////////////////// Create dom elements
-const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
+const createElement = (
+  element = '',
+  className = [],
+  text = '',
+  src = '',
+  alt = '',
+) => {
   const newElement = document.createElement(element);
   newElement.classList.add(...className);
   newElement.textContent = text;
@@ -33,7 +39,13 @@ const displayFood = async () => {
   data.forEach(async (e) => {
     const noLikes = await numberOfLikes(e.idCategory);
     const foodCont = createElement('div', ['main__food']);
-    const foodImg = createElement('img', ['main__food--img'], '', e.strCategoryThumb, 'Favorite Food');
+    const foodImg = createElement(
+      'img',
+      ['main__food--img'],
+      '',
+      e.strCategoryThumb,
+      'Favorite Food',
+    );
     const foodDesc = createElement('div', ['main__food--desc']);
     const desc = createElement('div', ['desc']);
     const descCard = createElement('div', ['card']);
@@ -52,6 +64,13 @@ const displayFood = async () => {
     foodDesc.append(descCard, commButton);
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
+    count += 1;
+
+    displayPopup(commButton, e);
+    displayCount(count);
+
+    like(icon, e.idCategory, numLikes);
+  });
 };
 
 export { displayLogo, displayCount, displayFood };
