@@ -26,6 +26,7 @@ const closePopup = (btn) => {
 
 const addComment = (e, foodname, aboutCont, comment, commentGroup, numComments) => {
   form.addEventListener('submit', (event) => {
+    event.preventDefault();
     const name = form.elements.name.value;
     const textComment = form.elements.textarea.value;
     comments.username = name;
@@ -45,7 +46,6 @@ const addComment = (e, foodname, aboutCont, comment, commentGroup, numComments) 
     main.append(foodname, aboutCont, comment, commentGroup);
     form.elements.name.value = '';
     form.elements.textarea.value = '';
-    event.preventDefault();
   });
 };
 
