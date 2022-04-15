@@ -1,5 +1,3 @@
-
-
 // ////////////// Api request
 const appID = 'NFxX76uVcS9wzX0LJoyT';
 const baseURL = 'https://www.themealdb.com/api/json/v1/1/categories.php';
