@@ -1,14 +1,25 @@
 /* eslint-disable import/extensions */
 import { getData } from './config';
 import { numberOfLikes, like } from './controller';
-import displayPopup from './picture';
 
-const logo = 'https://static.photocrowd.com/upl/DF/cms.kqBA86TWO9ELumnHrQTg-v2b.jpeg';
-const logoContainer = document.querySelector('.logo');
+const container = document.querySelector('.container');
+const popWindow = document.querySelector('.popup-window');
 const mainContainer = document.querySelector('.main');
 const itemCounter = document.querySelector('.item-counter');
 
-// /////////////////// Create dom elements
+// /////////////////// Display number of favorite food
+const displayCount = (count) => {
+  itemCounter.textContent = count;
+};
+
+// /////////////////// Display Comment
+const displayComment = async (btn) => {
+  await btn.addEventListener('click', () => {
+    container.classList.add('hide');
+    popWindow.classList.add('show');
+  });
+};
+
 const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
   const newElement = document.createElement(element);
   newElement.classList.add(...className);
@@ -16,17 +27,6 @@ const createElement = (element = '', className = [], text = '', src = '', alt = 
   newElement.src = src;
   newElement.alt = alt;
   return newElement;
-};
-
-// /////////////////// Display Logo
-const displayLogo = () => {
-  const logoImg = createElement('img', ['logo-img'], '', logo, 'LOGO');
-  logoContainer.appendChild(logoImg);
-};
-
-// /////////////////// Display number of favorite food
-const displayCount = (count) => {
-  itemCounter.textContent = count;
 };
 
 const displayFood = async () => {
@@ -56,11 +56,10 @@ const displayFood = async () => {
     mainContainer.appendChild(foodCont);
     count += 1;
 
-    displayPopup(commButton, e);
-
     displayCount(count);
+    displayComment(commButton);
     like(icon, e.idCategory, numLikes);
   });
 };
 
-export { displayLogo, displayCount, displayFood };
+module.exports = { displayCount, displayFood };
