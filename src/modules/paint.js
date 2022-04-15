@@ -1,13 +1,12 @@
 /* eslint-disable import/extensions */
-import logo from '../assets/images/fast-food.jpg';
-import { getComments, getData } from './config';
+import { getData } from './config';
 import { numberOfLikes, like } from './controller';
-import { displayComment, displayPopup } from './picture';
+import displayPopup from './picture';
 
+const logo = 'https://static.photocrowd.com/upl/DF/cms.kqBA86TWO9ELumnHrQTg-v2b.jpeg';
 const logoContainer = document.querySelector('.logo');
 const mainContainer = document.querySelector('.main');
 const itemCounter = document.querySelector('.item-counter');
-
 
 // /////////////////// Create dom elements
 const createElement = (element = '', className = [], text = '', src = '', alt = '') => {
@@ -27,8 +26,6 @@ const displayLogo = () => {
 const displayCount = (count) => {
   itemCounter.textContent = count;
 };
-
-
 
 const displayFood = async () => {
   let count = 0;
@@ -56,10 +53,9 @@ const displayFood = async () => {
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
     count += 1;
-    
-    displayPopup(e.idCategory, e.strCategoryThumb, e.strCategory)
+
+    displayPopup(commButton, e);
     displayCount(count);
-    displayComment(commButton, e.idCategory, e.strCategoryThumb, e.strCategory);
 
     like(icon, e.idCategory, numLikes);
   });
