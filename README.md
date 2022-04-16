@@ -50,11 +50,11 @@
 
 - **Project Screenshot**: home page
 
-![project screenshot - home page]()
+![project screenshot - home page](https://user-images.githubusercontent.com/51437483/163655135-0df603d3-4e75-4139-b501-5b12b181559d.png)
 
 - **Project Screenshot**: Comment page
 
-![project screenshot - comment page]()
+![project screenshot - comment page](https://user-images.githubusercontent.com/51437483/163655192-0288b591-2508-49f8-856e-b098df5ef7a9.png)
 
 # Author
 
