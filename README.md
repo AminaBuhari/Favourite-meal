@@ -2,21 +2,20 @@
 
 # Favorite Meals
 
-> In this project, we intended to develop a dynamic website, which is a basic single page apps. and throughout this project we did follow the following requirements:
+> In this project, we developed a  dynamic website, which is a basic single page apps. and throughout this project we followed the basic requirements:
 
-- ES6 syntax.
-- ES6 modules.
-- callbacks and promises.
-- webpack.
-- JavaScript best practices and language style guides in code.
+- Used ES6 syntax.
+- Used ES6 modules.
+- Created callbacks and promises.
+- Used webpacks.
 - AAA pattern for unit tests.
-- Write units tests for a JavaScript app.
-- Follow Gitflow.
-- Solve simple git conflicts.
+- Units tests for a JavaScript app.
+- Followed Gitflow.
+- Solved simple git conflicts.
 - Send and receive data from an API.
-- Understand and use JSON.
-- Make JavaScript code synchronous.
-- Perform a code review for a team member.
+- Understood and used JSON.
+- Made JavaScript code synchronous.
+- Performed a code review for a team member.
 
 ## Built With
 
@@ -24,7 +23,7 @@
 - JavaScript
 - SCSS
 - Webpack
-- API
+- API 
 - Jest Testing and applying mocks
 
 ## Media screen💻📱🖥️
@@ -35,11 +34,11 @@
 
 ### Project Requirements
 
-- In this JavaScript capstone project we develop favorite food app based on an external API.
+- In this JavaScript capstone project we developed a  favorite food app based on an external API.
 
--we select [Meals DB](https://www.themealdb.com/api.php) an API that provides data about different types of food.
+-We used [Meals DB](https://www.themealdb.com/api.php) an API that provides data about different types of food.
 
-- Also use Microverse involvement API to post and get likes and comments. [Involvement API](https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NFxX76uVcS9wzX0LJoyT/)
+- We also used  a  Microverse involvement API to post and get likes and comments. [Involvement API](https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NFxX76uVcS9wzX0LJoyT/)
 
 #### This webapp has 2 user interfaces:
 
@@ -54,11 +53,12 @@
 
 - **Project Screenshot**: home page
 
-![project screenshot - home page](https://user-images.githubusercontent.com/51437483/163655135-0df603d3-4e75-4139-b501-5b12b181559d.png)
+![project screenshot - homepage](https://user-images.githubusercontent.com/66526480/163671568-6b7bf95b-5f1a-4669-8c27-b9dc06e4b27c.PNG)
+
 
 - **Project Screenshot**: Comment page
 
-![project screenshot - comment page](https://user-images.githubusercontent.com/51437483/163655192-0288b591-2508-49f8-856e-b098df5ef7a9.png)
+![project screenshot - comment page](https://user-images.githubusercontent.com/66526480/163671569-dc049546-16a1-4a03-92a4-e060a5d43f09.PNG)
 
 # Author
 
@@ -71,8 +71,8 @@
 👤 **Aminat Buhari**
 
 - GitHub: [@githubhandle](https://github.com/AminaBuhari)
-- Twitter: [@twitterhandle]()
-- LinkedIn: [LinkedIn]()
+- Twitter: [@twitterhandle](https://twitter.com/AminaBuhari)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/AminaBuhari/)
 
 ## Credential
 
