@@ -48,7 +48,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://github.com/AminaBuhari.github.io/Kanban-Board/)
+[Live Demo Link](https://teshemaximillan.github.io/webpack-test/)
 
 ## Screenshot
 
