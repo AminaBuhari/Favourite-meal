@@ -35,9 +35,13 @@
 
 ### Project Requirements
 
-- In this JavaScript capstone project we favorite food app based on an external API. we will select [Meals DB](https://www.themealdb.com/api.php) an API that provides data about different types of food.
+- In this JavaScript capstone project we develop favorite food app based on an external API.
 
-#### This webapp have 2 user interfaces:
+-we select [Meals DB](https://www.themealdb.com/api.php) an API that provides data about different types of food.
+
+- Also use Microverse involvement API to post and get likes and comments. [Involvement API](https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/NFxX76uVcS9wzX0LJoyT/)
+
+#### This webapp has 2 user interfaces:
 
 1. A home page showing a list of foods that you can "like."
 2. A popup window with more data about an item that we can use to comment on it for a period of time.
