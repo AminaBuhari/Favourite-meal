@@ -28,7 +28,7 @@ const closePopup = (btn) => {
 
 const countComment = (data) => data.length;
 
-const addComment = (e, foodname, aboutCont, comment, commentGroup, numComments) => {
+const addComment = (e, commentGroup, numComments) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = form.elements.name.value;
@@ -46,7 +46,7 @@ const addComment = (e, foodname, aboutCont, comment, commentGroup, numComments) 
 
     commrap.append(date, user, comm);
     commentGroup.appendChild(commrap);
-    numComments.textContent = Number(numComments.textContent) + 1; 
+    numComments.textContent = Number(numComments.textContent) + 1;
     form.elements.name.value = '';
     form.elements.textarea.value = '';
   });
@@ -91,7 +91,7 @@ const displayPopup = async (btn, e) => {
       commentGroup.append(commrap);
     });
     main.append(foodname, aboutCont, comment, commentGroup);
-    addComment(e, foodname, aboutCont, comment, commentGroup, numComments);
+    addComment(e,commentGroup, numComments);
   });
 };
 

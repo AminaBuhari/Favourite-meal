@@ -6,7 +6,7 @@ const involvementURL = `https://us-central1-involvement-api.cloudfunctions.net/c
 // ////////////// Create objects
 const likeOB = { item_id: '' };
 const comments = { item_id: '', username: '', comment: '' };
-const reservations = {item_id: '', username: '', date_start: '', date_end: '' }
+const reservations = {item_id: '', username: '', date_start: '', date_end: '' };
 
 // ////////////// Get all data from baseURL
 const getData = async () => {
