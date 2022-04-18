@@ -6,6 +6,7 @@ const involvementURL = `https://us-central1-involvement-api.cloudfunctions.net/c
 // ////////////// Create objects
 const likeOB = { item_id: '' };
 const comments = { item_id: '', username: '', comment: '' };
+const reservations = {item_id: '', username: '', date_start: '', date_end: '' }
 
 // ////////////// Get all data from baseURL
 const getData = async () => {
@@ -53,6 +54,33 @@ const postComments = async (data = {}) => {
   return response;
 };
 
+// Post Reservations 
+const postReservations = async (data = {}) => {
+  const response = await fetch(`${involvementURL}reservations`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  });
+  return response;
+};
+
+// Get Reservations
+const getReservations = async (id) => {
+  const response = await fetch(`${involvementURL}reservations?item_id=${id}`);
+  if (response.status === 200) return response.json();
+
+  return [
+    {
+      comment: 'No current reservation',
+      date_start: '',
+      date_end: '',
+      username: '',
+    },
+  ];
+};
+
+
+
 export {
   getData,
   getLikes,
@@ -62,4 +90,7 @@ export {
   likeOB,
   comments,
   baseURL,
+  postReservations,
+  getReservations,
+  reservations
 };

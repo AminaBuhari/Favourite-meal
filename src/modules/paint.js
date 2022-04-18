@@ -2,6 +2,7 @@
 import { getData } from './config';
 import { numberOfLikes, like } from './controller';
 import displayPopup from './picture';
+import diplayReserve from './reservation.js';
 
 const logo = 'https://static.photocrowd.com/upl/DF/cms.kqBA86TWO9ELumnHrQTg-v2b.jpeg';
 const logoContainer = document.querySelector('.logo');
@@ -58,16 +59,19 @@ const displayFood = async () => {
     const numLikes = createElement('span', ['num-likes'], noLikes);
     const spanLikes = createElement('span', [], ' likes');
     const commButton = createElement('button', ['main__food--btn'], 'Comments');
+    const resButton = createElement('button', ['main__food--btn', 'res'], 'Reservations')
 
     desc.appendChild(descPara);
     likesPara.append(numLikes, spanLikes);
     likes.append(icon, likesPara);
     descCard.append(desc, likes);
-    foodDesc.append(descCard, commButton);
+    foodDesc.append(descCard, commButton, resButton);
     foodCont.append(foodImg, foodDesc);
     mainContainer.appendChild(foodCont);
     count += 1;
 
+    
+    diplayReserve(resButton, e)
     displayPopup(commButton, e);
 
     displayCount(count);
@@ -75,4 +79,4 @@ const displayFood = async () => {
   });
 };
 
-export { displayLogo, displayCount, displayFood };
+export { displayLogo, displayCount, displayFood, createElement };

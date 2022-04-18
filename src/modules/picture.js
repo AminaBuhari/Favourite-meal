@@ -2,6 +2,7 @@ import { comments, getComments, postComments } from './config.js';
 
 const container = document.querySelector('.container');
 const popWindow = document.querySelector('.popup-window');
+const popReservation = document.querySelector('.popup-reservation')
 const imgCont = document.querySelector('.img-cont');
 const main = document.querySelector('.pop-main');
 const close = document.querySelector('.icon-close');
@@ -20,7 +21,9 @@ const createElement = (name = '', className = [], text = '', src = '', alt = '')
 const closePopup = (btn) => {
   btn.addEventListener('click', () => {
     container.classList.remove('hide');
+    // popReservation.classList.add('hide')
     popWindow.classList.add('hide');
+    
   });
 };
 
@@ -56,6 +59,8 @@ const displayPopup = async (btn, e) => {
     container.classList.add('hide');
     popWindow.classList.remove('hide');
     popWindow.classList.add('show');
+    
+    
     main.innerHTML = '';
     imgCont.innerHTML = '';
     const img = createElement('img', ['pop-img'], '', e.strCategoryThumb, 'Picture');

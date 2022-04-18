@@ -120,7 +120,7 @@
         }
       }
 
-      &--btn {
+      &--btn{
         font-family: inherit;
         font-size: inherit;
         font-weight: 600;
@@ -136,8 +136,14 @@
           color: var(--white);
           transform: translateY(2px);
         }
+
       }
+    
     }
+  }
+
+  .res {
+    border-top: 2px solid black;
   }
 
   .footer {
@@ -162,3 +168,12 @@
 .hide {
   display: none !important;
 }
+
+.remove {
+  display: none !important;
+}
+
+.showcase {
+  display: flex !important;
+}
+
