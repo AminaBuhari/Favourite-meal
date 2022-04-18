@@ -120,7 +120,7 @@
         }
       }
 
-      &--btn{
+      &--btn {
         font-family: inherit;
         font-size: inherit;
         font-weight: 600;
@@ -136,9 +136,7 @@
           color: var(--white);
           transform: translateY(2px);
         }
-
       }
-    
     }
   }
 
@@ -176,4 +174,3 @@
 .showcase {
   display: flex !important;
 }
-
