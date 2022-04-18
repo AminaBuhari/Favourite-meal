@@ -16,7 +16,7 @@ const closePopup = (btn) => {
 
 const countComment = (data) => data.length;
 
-const addReservations = (e, foodname, aboutCont, comment, commentGroup, numComments) => {
+const addReservations = (foodname, aboutCont, comment, commentGroup, numComments) => {
     form.addEventListener ('submit', (event) => {
         event.preventDefault();
         const name = form.elememts.name.value;
@@ -63,7 +63,7 @@ const displayReserve = async (btn, e) => {
       const p2 = createElement('p', '', 'Origin: America');
       const p3 = createElement('p', '', 'Calories: 200kcal');
       const p4 = createElement('p', '', 'Toppings: Chocolate syrup');
-      const numComments = createElement('span', ['comment-counter'], numberOfComments);
+      const numComments = createElement('span', ['comment-counter'], numberOfReservations);
 
         imgCont.append(imag);
         desc1.append(p1, p2);
@@ -71,8 +71,17 @@ const displayReserve = async (btn, e) => {
         aboutCont.append(desc1, desc2);
         comment.append(numComments);
         closePopup(close);
+        data.forEach((ele) => {
+            const commrap = createElement('div', ['commrap']);
+            const date = createElement('p', ['date'], `${ele.date_start}`);
+            const dateend = createElement('p', ['date'], `${ele.date_end}:`);
+            const comm = createElement('p', ['comm'], ele.username);
+            commrap.append(date, dateend, comm);
+            commentGroup.append(commrap);
+        });
 
-        main.append(foodname, aboutCont, comment);
+        main.append(foodname, aboutCont, comment, commentGroup);
+        addReservations(foodname, aboutCont, comment, commentGroup, numComments);
     });
 };
 

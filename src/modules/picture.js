@@ -2,7 +2,6 @@ import { comments, getComments, postComments } from './config.js';
 
 const container = document.querySelector('.container');
 const popWindow = document.querySelector('.popup-window');
-const popReservation = document.querySelector('.popup-reservation')
 const imgCont = document.querySelector('.img-cont');
 const main = document.querySelector('.pop-main');
 const close = document.querySelector('.icon-close');
@@ -47,8 +46,7 @@ const addComment = (e, foodname, aboutCont, comment, commentGroup, numComments) 
 
     commrap.append(date, user, comm);
     commentGroup.appendChild(commrap);
-    numComments.textContent = Number(numComments.textContent) + 1;
-    main.append(foodname, aboutCont, comment, commentGroup);
+    numComments.textContent = Number(numComments.textContent) + 1; 
     form.elements.name.value = '';
     form.elements.textarea.value = '';
   });
