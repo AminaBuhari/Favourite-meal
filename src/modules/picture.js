@@ -22,7 +22,6 @@ const closePopup = (btn) => {
     container.classList.remove('hide');
     // popReservation.classList.add('hide')
     popWindow.classList.add('hide');
-    
   });
 };
 
@@ -57,8 +56,7 @@ const displayPopup = async (btn, e) => {
     container.classList.add('hide');
     popWindow.classList.remove('hide');
     popWindow.classList.add('show');
-    
-    
+
     main.innerHTML = '';
     imgCont.innerHTML = '';
     const img = createElement('img', ['pop-img'], '', e.strCategoryThumb, 'Picture');
@@ -91,7 +89,7 @@ const displayPopup = async (btn, e) => {
       commentGroup.append(commrap);
     });
     main.append(foodname, aboutCont, comment, commentGroup);
-    addComment(e,commentGroup, numComments);
+    addComment(e, commentGroup, numComments);
   });
 };
 

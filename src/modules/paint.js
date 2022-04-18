@@ -59,7 +59,7 @@ const displayFood = async () => {
     const numLikes = createElement('span', ['num-likes'], noLikes);
     const spanLikes = createElement('span', [], ' likes');
     const commButton = createElement('button', ['main__food--btn'], 'Comments');
-    const resButton = createElement('button', ['main__food--btn', 'res'], 'Reservations')
+    const resButton = createElement('button', ['main__food--btn', 'res'], 'Reservations');
 
     desc.appendChild(descPara);
     likesPara.append(numLikes, spanLikes);
@@ -70,8 +70,7 @@ const displayFood = async () => {
     mainContainer.appendChild(foodCont);
     count += 1;
 
-    
-    diplayReserve(resButton, e)
+    diplayReserve(resButton, e);
     displayPopup(commButton, e);
 
     displayCount(count);
@@ -79,4 +78,6 @@ const displayFood = async () => {
   });
 };
 
-export { displayLogo, displayCount, displayFood, createElement };
+export {
+  displayLogo, displayCount, displayFood, createElement,
+};
