@@ -72,7 +72,7 @@
 
 - GitHub: [@githubhandle](https://github.com/AminaBuhari)
 - Twitter: [@twitterhandle](https://twitter.com/AminaBuhari)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/AminaBuhari/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/aminat-buhari-2a39b2108/)
 
 ## Credential
 
