@@ -174,3 +174,48 @@
 .showcase {
   display: flex !important;
 }
+
+
+@media (max-width: 480px) {
+  .container{
+    margin: 2rem; 
+    .main {
+      margin-top: 10rem;
+    }
+
+    .header{
+      .nav__items--item{
+
+           margin-right: 0rem;
+
+      }
+    }
+  
+      .logo {
+        align-self: center;
+      .logo-img {
+        width: 6rem;
+        height: 6rem;
+        align-self: center;
+      }
+
+      
+     }
+
+     .nav__items{
+       font-size: 1.2rem;
+  
+      }
+
+       
+     
+
+
+    
+
+   
+
+    
+  }
+  
+}
