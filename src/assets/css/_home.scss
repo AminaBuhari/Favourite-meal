@@ -1,0 +1,205 @@
+@mixin layout {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  position: relative;
+
+  .header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: var(--white);
+    padding: 1rem;
+    max-height: 15rem;
+    z-index: 5;
+    box-shadow: rgba(240, 46, 170, 0.4) 0 5px, rgba(240, 46, 170, 0.3) 0 10px, rgba(240, 46, 170, 0.2) 0 15px, rgba(240, 46, 170, 0.1) 0 20px, rgba(240, 46, 170, 0.05) 0 25px;
+
+    @include layout();
+
+    .logo-img {
+      margin-right: 5rem;
+      width: 10rem;
+      height: 10rem;
+      border: 3px solid var(--light-purple);
+      background-color: var(--light-purple);
+      padding: 0.25rem;
+      border-radius: 50%;
+    }
+
+    .nav {
+      &__items {
+        display: flex;
+
+        &--item {
+          margin-top: 2.5rem;
+          list-style: none;
+
+          &:not(:last-child) {
+            margin-right: 3rem;
+          }
+
+          a {
+            text-decoration: none;
+            color: var(--light-purple);
+            font-weight: 600;
+          }
+        }
+
+        .item-counter {
+          @include counter(0.3rem 0.7rem);
+        }
+      }
+    }
+  }
+
+  .main {
+    @include layout();
+
+    flex: 2;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: var(--white);
+    padding-top: 3rem;
+    margin-top: 19rem;
+    max-width: 120rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+
+    &__food {
+      width: 30.1rem;
+      margin-bottom: 5rem;
+
+      &--img {
+        width: 100%;
+        transform: translateY(0.7rem);
+      }
+
+      &--desc {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .card {
+          display: flex;
+          justify-content: space-around;
+          padding: 2rem 0;
+          background-color: var(--light-grey);
+
+          .likes {
+            .icon {
+              cursor: pointer;
+              width: 2.4rem;
+              height: 2.4rem;
+              background-color: var(--light-purple);
+              clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+              position: relative;
+              transform: scale(1.2);
+              transition: all 0.2s;
+
+              &:hover {
+                transform: translateY(-3px);
+                transform: scale(1.4);
+
+                &:active,
+                &:focus {
+                  outline: none;
+                  transform: translateY(-1px);
+                  background-color: var(--light-purple-2);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &--btn {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: 600;
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        background-color: var(--light-grey-2);
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: var(--dark-purple);
+          color: var(--white);
+          transform: translateY(2px);
+        }
+      }
+    }
+  }
+
+  .res {
+    border-top: 2px solid black;
+  }
+
+  .footer {
+    margin-top: 5rem;
+    background-color: var(--dark-purple);
+    box-shadow: rgba(241, 237, 237, 0.4) 0 -2px 4px, rgba(241, 237, 237, 0.3) 0 -7px 13px -3px, rgba(241, 237, 237, 0.2) 0 -3px 0 inset;
+    color: var(--white);
+    flex: 0.5;
+    width: 100%;
+    max-height: 8rem;
+
+    .copy-right {
+      margin: 3rem 2rem;
+    }
+  }
+}
+
+.show {
+  display: flex !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.remove {
+  display: none !important;
+}
+
+.showcase {
+  display: flex !important;
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 2rem;
+
+    .main {
+      margin-top: 10rem;
+    }
+
+    .header {
+      .nav__items--item {
+        margin-right: 0;
+      }
+    }
+
+    .logo {
+      align-self: center;
+
+      .logo-img {
+        width: 6rem;
+        height: 6rem;
+        align-self: center;
+      }
+    }
+
+    .nav__items {
+      font-size: 1.2rem;
+    }
+  }
+}

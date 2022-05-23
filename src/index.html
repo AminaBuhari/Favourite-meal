@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+  name="description"
+  content="Favourite-Meal
+  The Favourite-Meal is a website that allows users to comment and reserve a meal. "
+/>
+<meta name="og:image" content="images/makefood.jpg" />
+<meta property="og:image:secure_url" content="images/makefood.jpg" />
+<meta property="og:image:type" content="image/jpg" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<meta property="og:image:alt" content="food logo" />
+<script src="https://kit.fontawesome.com/030a66e167.js" crossorigin="anonymous"></script>
+<title>Favorite Meal</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo"></div>
+      <nav class="nav">
+        <ul class="nav__items">
+          <li class="nav__items--item">
+            <a href="">Menu <span class="item-counter">0</span></a>
+          </li>
+          <li class="nav__items--item"><a href="">Ordered</a></li>
+          <li class="nav__items--item"><a href="">Customers</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main"></main>
+    <footer class="footer">
+      <p class="copy-right">
+        Created by Teshome and Amina under Microverse CC License
+      </p>
+    </footer>
+  </div>
+  <!-- Popup Window -->
+  <div class="popup-window">
+    <div class="wrapper">
+      <header class="pop-header">
+        <div class="img-cont"></div>
+        <a href="#" class="icon-close"><i class="fa fa-solid fa-xmark"></i></a>
+      </header>
+      <div class="pop-main"></div>
+      <footer class="pop-footer">
+        <h2>Add a comment</h2>
+        <form id="form">
+          <input type="text" name="name" id="name" placeholder="Your name" required />
+          <textarea name="textarea" placeholder="Your insights" id="textarea" cols="30" rows="5" required></textarea>
+          <button type="submit" class="btnComment">Comment</button>
+        </form>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Reservation window -->
+  <div class="popup-reservation">
+    <div class="wrapper">
+      <header class="pop-header">
+        <div class="img-container"></div>
+        <a href="#" class="icon-close-res"><i class="fa fa-solid fa-xmark"></i></a>
+      </header>
+      <div class="pop-res"></div>
+      <footer class="pop-footer">
+        <h2>Add a Reservation</h2>
+        <form id="fom">
+          <input type="text" name="name" id="namee" placeholder="Your name" required />
+          <input type="text" name="date" id="date" placeholder="Date Start" required />
+          <input type="text" name="end" id="end" placeholder="Year-Month-Date" required />
+          <button type="button" class="btnReserve">Reserve</button>
+        </form>
+      </footer>
+    </div>
+ </div>
+</body>
+
+</html>
