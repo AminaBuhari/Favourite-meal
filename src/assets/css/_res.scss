@@ -5,7 +5,6 @@
   display: none;
   justify-content: center;
   background-color: var(--white);
-
   border-radius: 1rem;
   box-shadow: rgba(175, 30, 88, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
 
@@ -121,7 +120,7 @@
         font-family: inherit;
         font-weight: 900;
         font-size: inherit;
-        padding: 1rem 0rem;
+        padding: 1rem 0;
         color: var(--light-purple);
         border: 2px solid var(--dark);
         border-radius: 0.5rem;
@@ -146,20 +145,20 @@
 @media (max-width: 480px) {
   .popup-reservation {
     margin: 2rem;
-    
   }
 
-  .wrapper{
+  .wrapper {
     margin: 2rem;
     width: 80%;
-
   }
 
   textarea {
     width: 100%;
   }
 
- #date, #end, #name{
+  #date,
+  #end,
+  #namee {
     width: 100%;
   }
 
@@ -168,8 +167,7 @@
     align-items: center;
   }
 
-  button{
-    padding: 0rem;
+  button {
+    padding: 0;
   }
-
-}  
+}
