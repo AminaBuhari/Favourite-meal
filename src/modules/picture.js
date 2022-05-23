@@ -20,13 +20,14 @@ const createElement = (name = '', className = [], text = '', src = '', alt = '')
 const closePopup = (btn) => {
   btn.addEventListener('click', () => {
     container.classList.remove('hide');
+    // popReservation.classList.add('hide')
     popWindow.classList.add('hide');
   });
 };
 
 const countComment = (data) => data.length;
 
-const addComment = (e, foodname, aboutCont, comment, commentGroup, numComments) => {
+const addComment = (e, commentGroup, numComments) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const name = form.elements.name.value;
@@ -45,7 +46,6 @@ const addComment = (e, foodname, aboutCont, comment, commentGroup, numComments) 
     commrap.append(date, user, comm);
     commentGroup.appendChild(commrap);
     numComments.textContent = Number(numComments.textContent) + 1;
-    main.append(foodname, aboutCont, comment, commentGroup);
     form.elements.name.value = '';
     form.elements.textarea.value = '';
   });
@@ -56,6 +56,7 @@ const displayPopup = async (btn, e) => {
     container.classList.add('hide');
     popWindow.classList.remove('hide');
     popWindow.classList.add('show');
+
     main.innerHTML = '';
     imgCont.innerHTML = '';
     const img = createElement('img', ['pop-img'], '', e.strCategoryThumb, 'Picture');
@@ -88,7 +89,7 @@ const displayPopup = async (btn, e) => {
       commentGroup.append(commrap);
     });
     main.append(foodname, aboutCont, comment, commentGroup);
-    addComment(e, foodname, aboutCont, comment, commentGroup, numComments);
+    addComment(e, commentGroup, numComments);
   });
 };
 

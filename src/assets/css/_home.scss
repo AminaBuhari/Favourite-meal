@@ -140,6 +140,10 @@
     }
   }
 
+  .res {
+    border-top: 2px solid black;
+  }
+
   .footer {
     margin-top: 5rem;
     background-color: var(--dark-purple);
@@ -161,4 +165,12 @@
 
 .hide {
   display: none !important;
+}
+
+.remove {
+  display: none !important;
+}
+
+.showcase {
+  display: flex !important;
 }
