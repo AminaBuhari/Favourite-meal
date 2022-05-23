@@ -120,7 +120,7 @@
         font-family: inherit;
         font-weight: 900;
         font-size: inherit;
-        padding: 1rem 10rem;
+        padding: 1rem 0;
         color: var(--light-purple);
         border: 2px solid var(--dark);
         border-radius: 0.5rem;
@@ -139,5 +139,35 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-reservation {
+    margin: 2rem;
+  }
+
+  .wrapper {
+    margin: 2rem;
+    width: 80%;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  #date,
+  #end,
+  #namee {
+    width: 100%;
+  }
+
+  .comment-group {
+    width: 116%;
+    align-items: center;
+  }
+
+  button {
+    padding: 0;
   }
 }
